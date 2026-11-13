@@ -6,7 +6,7 @@ A static portfolio built with HTML, CSS, and browser-native JavaScript. It has n
 
 Upload `index.html`, `styles.css`, `main.js`, `data.js`, and the `assets` folder to a static host:
 
-- **GitHub Pages:** push these files to a repository, then enable Pages for the branch and folder containing `index.html`.
+- **GitHub Pages:** push these files and the root-level `CNAME` file to a repository, then enable Pages for the branch and folder containing `index.html`. The `CNAME` file keeps `ridoy.me` connected to the site.
 - **Netlify:** create a new site by uploading the project folder. No build command is needed; publish the folder containing `index.html`.
 - **Vercel:** import the repository as a static site. Leave the build command empty and set the output directory to the project root.
 
