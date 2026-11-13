@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ataher Istiack Ridoy | UI/UX Designer & Web Developer</title>
+    <meta
+      name="description"
+      content="Ataher Istiack Ridoy is a UI/UX designer and web developer focused on user-centric experiences and responsive digital products."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ataher Istiack Ridoy | UI/UX Designer & Web Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Ataher Istiack Ridoy, UI/UX designer and web developer based in Dhaka, Bangladesh."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-backdrop" aria-hidden="true"></div>
+    <div class="pixel-cluster" aria-hidden="true"></div>
+
+    <header class="top-pill" aria-label="Main navigation">
+      <a href="mailto:ataheristiackridoy@gmail.com" class="top-pill__link">EMAIL ↗</a>
+      <div class="top-pill__divider"></div>
+      <a
+        href="assets/Ridoy%20CV.pdf"
+        class="top-pill__link"
+        download="Ataher-Istiack-Ridoy-CV.pdf"
+        aria-label="Download CV"
+      >CV ↓</a>
+      <div class="top-pill__divider"></div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menuOverlay">
+        <span>MENU</span>
+        <span class="menu-toggle__plus">+</span>
+      </button>
+    </header>
+
+    <nav class="menu-overlay" id="menuOverlay" aria-hidden="true" inert>
+      <div class="menu-overlay__inner">
+        <div class="menu-overlay__header">
+          <span class="menu-overlay__label">Index</span>
+          <button class="menu-close" type="button" aria-label="Close menu">×</button>
+        </div>
+        <div class="menu-overlay__list">
+              <a href="#intro"><span>00</span> Intro</a>
+              <a href="#work-1"><span>01</span> UI/UX Design</a>
+              <a href="#work-2"><span>02</span> Web Design</a>
+              <a href="#work-3"><span>03</span> Projects</a>
+              <a href="#also-built"><span>04</span> Skills & education</a>
+              <a href="#story"><span>05</span> Experience</a>
+              <a href="#approach"><span>06</span> Approach</a>
+              <a href="#contact"><span>07</span> Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="tab-rail" aria-label="Section navigation">
+      <button class="tab is-active" type="button" data-target="#intro" aria-current="location">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">00</span>
+        <span class="tab__label">INTRO</span>
+      </button>
+      <button class="tab" type="button" data-target="#work-1">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">01</span>
+        <span class="tab__label">WORK</span>
+      </button>
+      <button class="tab" type="button" data-target="#also-built">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">02</span>
+        <span class="tab__label">PROFILE</span>
+      </button>
+      <button class="tab" type="button" data-target="#story">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">03</span>
+        <span class="tab__label">EXPERIENCE</span>
+      </button>
+      <button class="tab" type="button" data-target="#approach">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">04</span>
+        <span class="tab__label">METHOD</span>
+      </button>
+      <button class="tab" type="button" data-target="#contact">
+        <span class="tab__progress" aria-hidden="true"></span>
+        <span class="tab__number">05</span>
+        <span class="tab__label">CONTACT</span>
+      </button>
+    </aside>
+
+    <div class="section-chip" id="sectionChip" aria-live="polite">
+      <span class="section-chip__index">00</span>
+      <strong class="section-chip__title">Intro</strong>
+    </div>
+
+    <main class="sheet-stack">
+      <section class="sheet intro-sheet" id="intro" data-sheet="intro" data-tint="#FAEBD7">
+        <div class="sheet-inner">
+          <div class="status-block">
+            <div class="status-block__meta">
+              <span class="mono">PROFILE</span>
+              <span class="status-block__copy">UI/UX Designer · Web Developer</span>
+            </div>
+            <span class="status-block__date mono">DHAKA, BANGLADESH</span>
+          </div>
+
+          <div class="intro-copy">
+            <p class="eyebrow mono">UI/UX DESIGNER · DHAKA, BANGLADESH</p>
+            <h2>I design thoughtful digital experiences that feel clear, calm, and human.</h2>
+            <a class="tape-link" href="#contact">Say hello ↗</a>
+          </div>
+
+          <div class="name-lockup" aria-label="Ataher Ridoy name">
+            <span class="first-name">Ataher</span>
+            <span class="surname" data-word="Ridoy">Ridoy</span>
+          </div>
+
+          <div class="portrait-wrap" aria-label="Portrait placeholder">
+            <div class="portrait-caption mono">ATAHER ISTIACK RIDOY · PORTRAIT</div>
+            <div class="portrait-surface">
+              <img src="assets/ridoy.png" alt="Portrait of Ataher Istiack Ridoy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet project-sheet teal" id="work-1" data-sheet="work-1" data-tint="#C5E8E6">
+        <div class="sheet-inner">
+          <div class="project-copy">
+            <p class="mono meta-line">UI/UX DESIGN · FIGMA</p>
+            <h3>UI/UX Design</h3>
+            <p class="summary">Creating user-centered digital experiences through clear structure, thoughtful interaction flows, and polished interface design.</p>
+            <p class="mono stack-line">FIGMA · WIREFRAMING · PROTOTYPING</p>
+            <div class="detail-grid">
+              <div class="detail-row"><span class="mono">FOCUS</span><span>Make products easier to understand and use through clear content, consistent components, and thoughtful interactions.</span></div>
+              <div class="detail-row"><span class="mono">MY ROLE</span><span>Shape user flows, wireframes, and high-fidelity interface concepts around the needs of the product and its users.</span></div>
+              <div class="detail-row"><span class="mono">TOOLS</span><span>Figma, Adobe Photoshop, and Adobe Illustrator.</span></div>
+            </div>
+          </div>
+          <div class="project-visual" data-project="ui-ux-design">
+            <div class="device-stack">
+              <div class="device screen is-main"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="mock-card mock-card--hero"></div><div class="mock-card mock-card--small"></div><div class="mock-card mock-card--tiny"></div></div></div>
+              <div class="device screen"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-line"></div><div class="mock-grid"></div></div></div>
+              <div class="device screen"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="mock-block big"></div><div class="mock-block"></div><div class="mock-block"></div></div></div>
+            </div>
+            <button class="view-button" type="button">PROJECT DETAILS →</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet project-sheet sand" id="work-2" data-sheet="work-2" data-tint="#EBD9A8">
+        <div class="sheet-inner">
+          <div class="project-copy">
+            <p class="mono meta-line">WEB DESIGN · FRONT-END DEVELOPMENT</p>
+            <h3>Web Design</h3>
+            <p class="summary">Designing and building responsive websites with HTML, CSS, JavaScript, and Tailwind CSS—bringing clean layouts and polished experiences to life.</p>
+            <p class="mono stack-line">HTML · CSS · JAVASCRIPT · TAILWIND CSS</p>
+            <div class="detail-grid">
+              <div class="detail-row"><span class="mono">FOCUS</span><span>Create responsive, visually clear pages that work smoothly across screen sizes.</span></div>
+              <div class="detail-row"><span class="mono">MY ROLE</span><span>Build page structure, styles, and interactive details from concept through implementation.</span></div>
+              <div class="detail-row"><span class="mono">TOOLS</span><span>HTML, CSS, JavaScript, Tailwind CSS, and other modern web tools.</span></div>
+            </div>
+          </div>
+          <div class="project-visual" data-project="web-design">
+            <div class="device-stack">
+              <div class="device screen is-main"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body shop-ui"><div class="shop-hero"></div><div class="shop-grid"><span></span><span></span><span></span><span></span></div></div></div>
+              <div class="device screen"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="shop-line"></div><div class="shop-line"></div><div class="shop-line short"></div><div class="shop-pill"></div></div></div>
+            </div>
+            <button class="view-button" type="button">PROJECT DETAILS →</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet project-sheet peri" id="work-3" data-sheet="work-3" data-tint="#C7D6F9">
+        <div class="sheet-inner">
+          <div class="project-copy">
+            <p class="mono meta-line">PROJECTS · SELECTED WORK</p>
+            <h3>Project List</h3>
+            <p class="summary">A selection of my web, design, and programming work, including an employee attendance system.</p>
+            <p class="mono stack-line">WEB DESIGN · UI/UX · PROGRAMMING · ATTENDANCE SYSTEM</p>
+            <div class="detail-grid">
+              <div class="detail-row"><span class="mono">WEB PROJECT</span><span><strong>Personal Portfolio Website</strong><br />Designed and developed a responsive portfolio using HTML, CSS, and Figma to showcase my design work.</span></div>
+              <div class="detail-row"><span class="mono">UI DESIGN</span><span><strong>E-commerce UI Design (Figma)</strong><br />A user-friendly online store interface focused on user experience and modern aesthetics.</span></div>
+              <div class="detail-row"><span class="mono">PROGRAMMING</span><span><strong>University Management System (C/Java)</strong><br />Developed as academic coursework, focusing on program logic and data handling.</span></div>
+              <div class="detail-row"><span class="mono">SOFTWARE</span><span><strong>Employee Attendance System</strong><br />An attendance system with IP-based access restrictions and face recognition for employee check-ins.</span></div>
+            </div>
+          </div>
+          <div class="project-visual" data-project="employee-attendance">
+            <div class="device-stack">
+              <div class="device screen is-main"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="dashboard-top"></div><div class="dashboard-charts"><span></span><span></span><span></span></div><div class="dashboard-list"></div></div></div>
+              <div class="device screen"><span class="device__header"><i></i><i></i><i></i></span><div class="device__body"><div class="db-row"></div><div class="db-row short"></div><div class="db-row"></div></div></div>
+            </div>
+            <button class="view-button" type="button">ATTENDANCE SYSTEM DETAILS →</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet paper-sheet also-built" id="also-built" data-sheet="also-built" data-tint="#EFEBE4">
+        <div class="sheet-inner">
+          <div class="section-label mono">04 — SKILLS & EDUCATION</div>
+          <h3>What I bring to a project.</h3>
+          <div class="profile-grid">
+            <article class="profile-card">
+              <span class="mono">DESIGN & WEB</span>
+              <p>Figma, Adobe Photoshop, Adobe Creative Suite, HTML5, CSS3, JavaScript, and Tailwind CSS.</p>
+            </article>
+            <article class="profile-card">
+              <span class="mono">PROGRAMMING & SYSTEMS</span>
+              <p>C, Java, Windows 7/10/11, Ubuntu, PC assembly, configuration, and troubleshooting.</p>
+            </article>
+            <article class="profile-card">
+              <span class="mono">PRODUCTIVITY</span>
+              <p>Microsoft Word, Excel, PowerPoint, and Google Workspace.</p>
+            </article>
+            <article class="profile-card">
+              <span class="mono">LANGUAGES</span>
+              <p>Bangla: excellent reading, writing, and speaking. English: excellent reading and writing; good speaking.</p>
+            </article>
+          </div>
+          <div class="education-list">
+            <h4>Education</h4>
+            <div class="education-row"><span class="mono">2026 · RESULT 2.75</span><strong>B.Sc. in Computer Science</strong><small>Daffodil International University, Dhaka</small></div>
+            <div class="education-row"><span class="mono">2019 · RESULT 3.67</span><strong>Higher Secondary Certificate</strong><small>Bangabandhu College Rajshahi, Rajshahi</small></div>
+            <div class="education-row"><span class="mono">2017 · RESULT 4.64</span><strong>Secondary School Certificate</strong><small>Rajshahi Model School and College, Rajshahi</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet paper-sheet story-sheet" id="story" data-sheet="story" data-tint="#EFEBE4">
+        <div class="sheet-inner">
+          <div class="section-label mono">05 — EXPERIENCE & TRAINING</div>
+          <h3>Work history</h3>
+          <div class="time-card">
+            <div class="time-card__row">
+              <span class="mono">JUL 2026 — PRESENT</span>
+              <div>
+                <strong>Senior IT Engineer & Reservation Executive</strong>
+                <small>Innovate Solution</small>
+                <p>Technical support and troubleshooting; flight and hotel reservations using Sabre and Travelport Galileo; and coordination between IT infrastructure and travel platforms.</p>
+              </div>
+            </div>
+            <div class="time-card__row">
+              <span class="mono">3 MONTHS · 2025</span>
+              <div>
+                <strong>Web Design Level-3</strong>
+                <small>European IT Solution Dhaka (NSDA)</small>
+                <p>Three-month professional web design training · 7 Dec 2025.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet paper-sheet approach-sheet" id="approach" data-sheet="approach" data-tint="#EBD9A8">
+        <div class="sheet-inner">
+          <div class="section-label mono">06 — APPROACH</div>
+          <h3>House rules</h3>
+          <div class="rules-grid">
+            <article>
+              <span class="mono">01</span>
+              <h4>Work independently or together.</h4>
+              <p>I can take initiative on individual tasks and contribute as part of a team.</p>
+            </article>
+            <article>
+              <span class="mono">02</span>
+              <h4>Look from different angles.</h4>
+              <p>I consider problems from multiple perspectives to explore alternate solutions.</p>
+            </article>
+            <article>
+              <span class="mono">03</span>
+              <h4>Be dependable.</h4>
+              <p>I aim to be reliable, decisive, task-oriented, and focused on results.</p>
+            </article>
+            <article>
+              <span class="mono">04</span>
+              <h4>Stay curious.</h4>
+              <p>I enjoy meeting people and learning from their perspectives.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet contact-sheet" id="contact" data-sheet="contact" data-tint="#1F3FE0">
+        <div class="sheet-inner">
+          <div class="section-label mono invert">07 — CONTACT</div>
+          <p class="mono">UI/UX DESIGN · WEB DEVELOPMENT · IT SUPPORT</p>
+          <h3>Ready to design and build a clearer digital experience?</h3>
+          <a class="email-cta" href="mailto:ataheristiackridoy@gmail.com">ataheristiackridoy@gmail.com</a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/ataher-istiack" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Ridoy-cyber" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="tel:+8801727133255">01727133255 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal__close" type="button" aria-label="Close modal">×</button>
+        <div class="modal__header">
+          <span class="mono modal__eyebrow">PROJECT</span>
+          <h4 id="modalTitle">Portfolio concept</h4>
+        </div>
+        <div class="modal__media">
+          <div class="modal__screen modal__screen--main"></div>
+          <div class="modal__screen modal__screen--side"></div>
+        </div>
+        <p class="modal__note mono">Abstract color preview · not a project screenshot</p>
+        <div class="modal__content">
+          <p id="modalText">This project focuses on a clean, personal presentation with strong content hierarchy and a light, editorial tone.</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
