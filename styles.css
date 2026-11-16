@@ -1876,8 +1876,16 @@ body {
     margin-top: 0;
   }
 
+  .sheet.is-turning {
+    clip-path: none;
+  }
+
   .sheet + .sheet {
     margin-top: 0;
+  }
+
+  .contact-sheet {
+    min-height: 100svh;
   }
 
   .sheet-inner {
@@ -1962,6 +1970,13 @@ body {
 
   .project-sheet .sheet-inner {
     display: block;
+  }
+
+  .contact-sheet .sheet-inner {
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .project-visual {
