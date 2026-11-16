@@ -811,6 +811,26 @@ a {
   cursor: default;
 }
 
+.project-visual--image {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.project-visual--image .ui-ux-preview-image {
+  display: block;
+  width: 100%;
+  max-height: min(74vh, 640px);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
+}
+
+.project-visual--image .view-button {
+  position: static;
+}
+
 .device-stack {
   position: relative;
   width: min(86%, 680px);
