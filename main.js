@@ -278,3 +278,128 @@ window.addEventListener('load', () => {
   sectionChip.classList.add('is-visible');
   setTimeout(() => sectionChip.classList.remove('is-visible'), 800);
 });
+
+const uiCardStack = document.querySelector('.project-visual[data-project="ui-ux-design"] .card-stack');
+if (uiCardStack) {
+  const uiCards = [...uiCardStack.querySelectorAll('.card-stack__card')];
+  const uiPills = [...uiCardStack.querySelectorAll('.card-stack__pill')];
+  const uiViewport = uiCardStack.querySelector('.card-stack__viewport');
+  const uiStyles = getComputedStyle(uiCardStack);
+  const uiDuration = (name, fallback) => parseFloat(uiStyles.getPropertyValue(name)) || fallback;
+  const uiPhaseDurations = [
+    uiDuration('--stack-idle-duration', 2000),
+    uiDuration('--stack-transition-duration', 1000),
+    uiDuration('--stack-pan-duration', 2500),
+    uiDuration('--stack-reset-duration', 500)
+  ];
+  const uiPauseReasons = new Set();
+  let uiActiveIndex = 0;
+  let uiPhase = 0;
+  let uiTimer = 0;
+  let uiPhaseStarted = 0;
+  let uiPhaseRemaining = uiPhaseDurations[0];
+  let uiDragStart = null;
+
+  const updateUiSlides = () => {
+    uiCards.forEach((card, index) => {
+      const order = (index - uiActiveIndex + uiCards.length) % uiCards.length;
+      card.classList.remove('is-front', 'is-back-1', 'is-back-2', 'is-back-3');
+      card.classList.add(order === 0 ? 'is-front' : `is-back-${order}`);
+      card.setAttribute('aria-hidden', String(order !== 0));
+      card.setAttribute('aria-label', `${index + 1} of ${uiCards.length}`);
+    });
+    uiPills.forEach((pill, index) => {
+      if (index === uiActiveIndex) pill.setAttribute('aria-current', 'true');
+      else pill.removeAttribute('aria-current');
+    });
+  };
+
+  const scheduleUiPhase = () => {
+    if (reducedMotion.matches || uiPauseReasons.size) return;
+    uiPhaseStarted = performance.now();
+    uiTimer = window.setTimeout(advanceUiPhase, uiPhaseRemaining);
+  };
+
+  const advanceUiPhase = () => {
+    uiTimer = 0;
+    uiPhase = (uiPhase + 1) % uiPhaseDurations.length;
+    if (uiPhase === 0) {
+      uiCardStack.classList.remove('is-transitioning', 'is-panning', 'is-resetting');
+    } else if (uiPhase === 1) {
+      uiCardStack.classList.add('is-transitioning');
+    } else if (uiPhase === 2) {
+      uiCardStack.classList.add('is-panning');
+    } else {
+      uiActiveIndex = (uiActiveIndex + 1) % uiCards.length;
+      uiCardStack.classList.remove('is-transitioning', 'is-panning');
+      uiCardStack.classList.add('is-resetting');
+      updateUiSlides();
+    }
+    uiPhaseRemaining = uiPhaseDurations[uiPhase];
+    scheduleUiPhase();
+  };
+
+  const selectUiSlide = (index) => {
+    window.clearTimeout(uiTimer);
+    uiTimer = 0;
+    uiActiveIndex = (index + uiCards.length) % uiCards.length;
+    uiPhase = uiPhaseDurations.length - 1;
+    uiPhaseRemaining = uiPhaseDurations[uiPhase];
+    uiCardStack.classList.remove('is-transitioning', 'is-panning');
+    uiCardStack.classList.add('is-resetting');
+    updateUiSlides();
+    if (reducedMotion.matches) {
+      window.setTimeout(() => uiCardStack.classList.remove('is-resetting'), 150);
+    } else {
+      scheduleUiPhase();
+    }
+  };
+
+  const pauseUiCycle = (reason) => {
+    if (uiPauseReasons.has(reason)) return;
+    uiPauseReasons.add(reason);
+    if (!uiTimer) return;
+    window.clearTimeout(uiTimer);
+    uiTimer = 0;
+    uiPhaseRemaining = Math.max(0, uiPhaseRemaining - (performance.now() - uiPhaseStarted));
+  };
+
+  const resumeUiCycle = (reason) => {
+    uiPauseReasons.delete(reason);
+    if (!uiPauseReasons.size && !uiTimer) scheduleUiPhase();
+  };
+
+  uiPills.forEach((pill, index) => pill.addEventListener('click', () => selectUiSlide(index)));
+  uiCardStack.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      selectUiSlide(uiActiveIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  uiCardStack.addEventListener('pointerenter', () => pauseUiCycle('pointer'));
+  uiCardStack.addEventListener('pointerleave', () => resumeUiCycle('pointer'));
+  uiCardStack.addEventListener('focusin', () => pauseUiCycle('focus'));
+  uiCardStack.addEventListener('focusout', (event) => {
+    if (!uiCardStack.contains(event.relatedTarget)) resumeUiCycle('focus');
+  });
+  uiViewport.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0) return;
+    uiDragStart = event.clientX;
+    uiViewport.setPointerCapture(event.pointerId);
+    uiCardStack.classList.add('is-dragging');
+  });
+  uiViewport.addEventListener('pointerup', (event) => {
+    if (uiDragStart === null) return;
+    const distance = event.clientX - uiDragStart;
+    uiDragStart = null;
+    uiCardStack.classList.remove('is-dragging');
+    if (Math.abs(distance) > 40) selectUiSlide(uiActiveIndex + (distance < 0 ? 1 : -1));
+  });
+  uiViewport.addEventListener('pointercancel', () => {
+    uiDragStart = null;
+    uiCardStack.classList.remove('is-dragging');
+  });
+
+  updateUiSlides();
+  scheduleUiPhase();
+}

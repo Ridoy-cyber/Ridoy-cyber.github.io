@@ -28,7 +28,7 @@
         rel="stylesheet"
       />
     </noscript>
-    <link rel="stylesheet" href="styles.css?v=ui-ux-preview-20261116-5" />
+    <link rel="stylesheet" href="styles.css?v=card-stack-20261116-6" />
   </head>
   <body>
     <div class="grid-backdrop" aria-hidden="true"></div>
@@ -151,8 +151,43 @@
               <div class="detail-row"><span class="mono">TOOLS</span><span>Figma, Adobe Photoshop, and Adobe Illustrator.</span></div>
             </div>
           </div>
-          <div class="project-visual project-visual--image" data-project="ui-ux-design">
-            <img class="ui-ux-preview-image" src="assets/ui.png" alt="Collage of mobile screens for a UX design learning app" />
+          <div class="project-visual" data-project="ui-ux-design">
+            <div class="card-stack" role="region" aria-roledescription="carousel" aria-label="UX learning app screen previews" tabindex="0">
+              <div class="card-stack__viewport">
+                <div class="card-stack__stage" id="uiux-card-stack-stage">
+                  <article class="card-stack__card is-front" role="group" aria-roledescription="slide" aria-label="1 of 4" aria-hidden="false">
+                    <div class="card-stack__image-window card-stack__crop--top-left">
+                      <img src="assets/ui.png" alt="Welcome and account sign-up screens for the UX learning app" width="10107" height="7722" loading="lazy" decoding="async" draggable="false" />
+                    </div>
+                    <div class="card-stack__chrome" aria-hidden="true"><span class="card-stack__lights"><i></i><i></i><i></i></span><span class="card-stack__title">uxlearn.app / welcome</span></div>
+                  </article>
+                  <article class="card-stack__card is-back-1" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+                    <div class="card-stack__image-window card-stack__crop--top-right">
+                      <img src="assets/ui.png" alt="Profile setup and onboarding screens for the UX learning app" width="10107" height="7722" loading="lazy" decoding="async" draggable="false" />
+                    </div>
+                    <div class="card-stack__chrome" aria-hidden="true"><span class="card-stack__lights"><i></i><i></i><i></i></span><span class="card-stack__title">uxlearn.app / onboarding</span></div>
+                  </article>
+                  <article class="card-stack__card is-back-2" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+                    <div class="card-stack__image-window card-stack__crop--bottom-left">
+                      <img src="assets/ui.png" alt="Learning goals and preference selection screens for the UX learning app" width="10107" height="7722" loading="lazy" decoding="async" draggable="false" />
+                    </div>
+                    <div class="card-stack__chrome" aria-hidden="true"><span class="card-stack__lights"><i></i><i></i><i></i></span><span class="card-stack__title">uxlearn.app / preferences</span></div>
+                  </article>
+                  <article class="card-stack__card is-back-3" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+                    <div class="card-stack__image-window card-stack__crop--bottom-right">
+                      <img src="assets/ui.png" alt="Course discovery and learning screens for the UX learning app" width="10107" height="7722" loading="lazy" decoding="async" draggable="false" />
+                    </div>
+                    <div class="card-stack__chrome" aria-hidden="true"><span class="card-stack__lights"><i></i><i></i><i></i></span><span class="card-stack__title">uxlearn.app / courses</span></div>
+                  </article>
+                </div>
+              </div>
+              <div class="card-stack__controls" role="group" aria-label="Choose a project preview">
+                <button class="card-stack__pill" type="button" aria-controls="uiux-card-stack-stage" aria-current="true">01 Welcome</button>
+                <button class="card-stack__pill" type="button" aria-controls="uiux-card-stack-stage">02 Setup</button>
+                <button class="card-stack__pill" type="button" aria-controls="uiux-card-stack-stage">03 Goals</button>
+                <button class="card-stack__pill" type="button" aria-controls="uiux-card-stack-stage">04 Courses</button>
+              </div>
+            </div>
             <button class="view-button" type="button">PROJECT DETAILS →</button>
           </div>
         </div>
