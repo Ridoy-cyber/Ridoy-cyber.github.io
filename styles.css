@@ -2502,3 +2502,47 @@ body {
     transform: scaleX(1);
   }
 }
+
+.card-stack__viewport {
+  perspective: none;
+}
+
+.card-stack__stage,
+.card-stack.is-transitioning .card-stack__stage,
+.card-stack.is-resetting .card-stack__stage {
+  animation: none;
+  transform: none;
+  transform-style: flat;
+  transition: none;
+}
+
+.card-stack__card,
+.card-stack__card.is-front,
+.card-stack__card.is-back-1,
+.card-stack__card.is-back-2,
+.card-stack__card.is-back-3,
+.card-stack.is-transitioning .card-stack__card:not(.is-front),
+.card-stack.is-panning .card-stack__card.is-front,
+.card-stack.is-panning .card-stack__card.is-back-1 {
+  transform: none;
+  transform-style: flat;
+  transition: opacity .2s ease;
+}
+
+.card-stack__card.is-front,
+.card-stack.is-panning .card-stack__card.is-front {
+  z-index: 1;
+  opacity: 1;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, .45);
+  cursor: default;
+}
+
+.card-stack__card:not(.is-front),
+.card-stack.is-panning .card-stack__card.is-back-1 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-stack__card.is-front:hover {
+  transform: none;
+}
